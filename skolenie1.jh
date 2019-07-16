@@ -1,0 +1,37 @@
+entity User {
+	firstName String
+    lastName String
+    email String
+    password String
+}
+
+entity Flight {
+	plane String
+    startTime String
+    endTime String
+    origin String
+    destination String
+    price Long
+    places Long
+}
+
+entity FlightBooking {
+}
+
+entity Payment {
+	date String
+    amount Long
+    method String
+}
+
+relationship ManyToMany {
+	User to FlightBooking
+}
+
+relationship ManyToMany {
+	Flight to FlightBooking
+}
+
+relationship OneToMany {
+	FlightBooking to Payment
+}
