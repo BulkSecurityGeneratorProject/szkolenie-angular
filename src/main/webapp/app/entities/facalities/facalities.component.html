@@ -1,0 +1,63 @@
+<div>
+    <h2 id="page-heading">
+        <span>Facalities</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-facalities" [routerLink]="['/facalities/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Facalities
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="facalities?.length === 0">
+        <span>No facalities found</span>
+    </div>
+    <div class="table-responsive" *ngIf="facalities?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Type</span></th>
+            <th><span>Hotel</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let facalities of facalities ;trackBy: trackId">
+                <td><a [routerLink]="['/facalities', facalities.id, 'view' ]">{{facalities.id}}</a></td>
+                <td>{{facalities.type}}</td>
+                <td>
+                    <div *ngIf="facalities.hotel">
+                        <a [routerLink]="['../hotel', facalities.hotel?.id, 'view' ]" >{{facalities.hotel?.name}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/facalities', facalities.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/facalities', facalities.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'facalities', { outlets: { popup: facalities.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
