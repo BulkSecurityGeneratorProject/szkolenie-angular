@@ -14,6 +14,13 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190807083944_added_entity_Booking.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190807083945_added_entity_Hotel.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190807083946_added_entity_Room.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190807083947_added_entity_Facilities.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190807083944_added_entity_constraints_Booking.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190807083946_added_entity_constraints_Room.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190807083947_added_entity_constraints_Facilities.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

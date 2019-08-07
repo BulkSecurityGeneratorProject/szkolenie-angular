@@ -1,0 +1,27 @@
+{
+    "name": "Facilities",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "hotel",
+            "otherEntityRelationshipName": "facilities",
+            "relationshipName": "hotel",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20190807083947",
+    "entityTableName": "facilities",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
