@@ -1,0 +1,31 @@
+entity Booking {
+	user String
+	startDate String
+   	endDate String
+}
+
+entity Hotel {
+	name String
+    location String
+}
+
+entity Room {
+	number Integer
+	capacity Integer
+    price Integer
+}
+
+
+entity Facilities {
+	type String
+}
+
+relationship OneToMany {
+	Hotel to Facilities{hotel(name)}
+  	Hotel to Room{hotel}
+}
+
+relationship ManyToMany {
+    Booking{room} to Room{booking}
+}
+

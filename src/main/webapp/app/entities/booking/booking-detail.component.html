@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="booking">
+            <h2><span>Booking</span> {{booking.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>User</span></dt>
+                <dd>
+                    <span>{{booking.user}}</span>
+                </dd>
+                <dt><span>Start Date</span></dt>
+                <dd>
+                    <span>{{booking.startDate}}</span>
+                </dd>
+                <dt><span>End Date</span></dt>
+                <dd>
+                    <span>{{booking.endDate}}</span>
+                </dd>
+                <dt><span>Room</span></dt>
+                <dd>
+                    <span *ngFor="let room of booking.rooms; let last = last">
+                        <a [routerLink]="['/room', room?.id, 'view' ]">{{room.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/booking', booking.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
