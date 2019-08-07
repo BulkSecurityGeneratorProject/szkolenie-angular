@@ -32,7 +32,7 @@ public class Room implements Serializable {
     private Integer price;
 
     @ManyToOne
-    @JsonIgnoreProperties("rooms")
+    @JsonIgnoreProperties({"rooms", "facilities"})
     private Hotel hotel;
 
     @ManyToMany(mappedBy = "rooms")

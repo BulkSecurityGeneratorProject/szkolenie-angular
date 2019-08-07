@@ -23,7 +23,7 @@ public class Facilities implements Serializable {
     private String type;
 
     @ManyToOne
-    @JsonIgnoreProperties("facilities")
+    @JsonIgnoreProperties({"facilities", "rooms"})
     private Hotel hotel;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

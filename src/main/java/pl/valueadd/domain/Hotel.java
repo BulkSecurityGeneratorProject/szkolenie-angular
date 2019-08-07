@@ -26,10 +26,10 @@ public class Hotel implements Serializable {
     @Column(name = "location")
     private String location;
 
-    @OneToMany(mappedBy = "hotel")
+    @OneToMany(mappedBy = "hotel", fetch = FetchType.EAGER)
     private Set<Facilities> facilities = new HashSet<>();
 
-    @OneToMany(mappedBy = "hotel")
+    @OneToMany(mappedBy = "hotel", fetch = FetchType.EAGER)
     private Set<Room> rooms = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
